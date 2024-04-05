@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from '../redux/actions';
-import Swal from 'sweetalert2';
 
 const initialState = {
   user_type: '',
@@ -24,15 +23,6 @@ const SignUpForm = () => {
     e.preventDefault();
     dispatch(signUpUser(user));
     setUser(initialState);
-    const passwordRegex =
-      /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.<>,:;{}=+])[A-Za-z\d@$!%*?&@$!%*?&.<>,:;{}=+]{8,}$/;
-    if (!passwordRegex.test(user.password)) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Invalid Password',
-        text: 'Password must be at least 8 characters long and contain at least one uppercase letter, one number, and one special character.',
-      });
-    }
   };
 
   return (
