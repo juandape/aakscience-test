@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from '../redux/actions';
+import Swal from 'sweetalert2';
 
 const initialState = {
   user_type: '',
@@ -23,6 +24,11 @@ const SignUpForm = () => {
     e.preventDefault();
     dispatch(signUpUser(user));
     setUser(initialState);
+    Swal.fire({
+      title: 'User signed up successfully!',
+      icon: 'success',
+      confirmButtonText: 'Close',
+    });
   };
 
   const inputClasses =
