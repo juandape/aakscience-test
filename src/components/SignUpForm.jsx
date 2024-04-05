@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from '../redux/actions';
+import Swal from 'sweetalert2';
 
 const initialState = {
   user_type: '',
@@ -23,14 +24,29 @@ const SignUpForm = () => {
     e.preventDefault();
     dispatch(signUpUser(user));
     setUser(initialState);
+    const passwordRegex =
+      /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.<>,:;{}=+])[A-Za-z\d@$!%*?&@$!%*?&.<>,:;{}=+]{8,}$/;
+    if (!passwordRegex.test(user.password)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Password',
+        text: 'Password must be at least 8 characters long and contain at least one uppercase letter, one number, and one special character.',
+      });
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Sign Up</h2>
-      <label>
+    <form onSubmit={handleSubmit} className='max-w-md mx-auto'>
+      <h2 className='text-xl font-bold mb-4'>Sign Up</h2>
+      <label className='block mb-2'>
         User Type:
-        <select name='user_type' value={user.user_type} onChange={handleChange}>
+        <select
+          name='user_type'
+          value={user.user_type}
+          onChange={handleChange}
+          className='mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+          required
+        >
           <option disabled hidden value=''>
             Select User Type
           </option>
@@ -40,52 +56,67 @@ const SignUpForm = () => {
           <option value='service_provider'>Service Provider</option>
         </select>
       </label>
-      <label>
+      <label className='block mb-2'>
         First Name:
         <input
           type='text'
           name='first_name'
           value={user.first_name}
           onChange={handleChange}
+          className='mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+          required
         />
       </label>
-      <label>
+      <label className='block mb-2'>
         Last Name:
         <input
           type='text'
           name='last_name'
           value={user.last_name}
           onChange={handleChange}
+          className='mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+          required
         />
       </label>
-      <label>
+      <label className='block mb-2'>
         Username:
         <input
           type='text'
           name='username'
           value={user.username}
           onChange={handleChange}
+          className='mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+          required
         />
       </label>
-      <label>
+      <label className='block mb-2'>
         Email:
         <input
           type='email'
           name='email'
           value={user.email}
           onChange={handleChange}
+          className='mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+          required
         />
       </label>
-      <label>
+      <label className='block mb-4'>
         Password:
         <input
           type='password'
           name='password'
           value={user.password}
           onChange={handleChange}
+          className='mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+          required
         />
       </label>
-      <button type='submit'>Sign Up</button>
+      <button
+        type='submit'
+        className='w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700'
+      >
+        Sign Up
+      </button>
     </form>
   );
 };
