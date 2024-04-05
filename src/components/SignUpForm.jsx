@@ -27,7 +27,7 @@ const SignUpForm = () => {
 
   const inputClasses =
     'mt-1 block w-80 rounded border-2 border-gray-200 shadow-sm hover:bg-gray-100 mx-auto p-2';
-  const labelClasses = 'block mb-2 ml-16 mt-4 font-bold';
+  const labelClasses = 'block mb-2 ml-16 mt-4 font-bold text-blue-500';
   return (
     <form onSubmit={handleSubmit} className='max-w-md mx-auto border-4 mt-10 shadow-xl'>
       <h2 className='text-2xl font-bold my-6 text-center text-blue-500'>Sign Up</h2>
