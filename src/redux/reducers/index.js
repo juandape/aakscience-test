@@ -14,7 +14,7 @@ const userReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 const rootReducer = combineReducers({
   user: userReducer,
