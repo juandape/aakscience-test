@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from '../redux/actions';
@@ -42,8 +44,11 @@ const SignUpForm = () => {
       <h2 className='text-2xl font-bold my-6 text-center text-blue-500'>
         Sign Up
       </h2>
-      <label className={labelClasses}>User Type:</label>
+      <label htmlFor='user_type' className={labelClasses}>
+        User Type:
+      </label>
       <select
+        id='user_type'
         name='user_type'
         value={user.user_type}
         onChange={handleChange}
@@ -59,8 +64,11 @@ const SignUpForm = () => {
         <option value='service_provider'>Service Provider</option>
       </select>
 
-      <label className={labelClasses}>First Name:</label>
+      <label htmlFor='first_name' className={labelClasses}>
+        First Name:
+      </label>
       <input
+        id='first_name'
         type='text'
         name='first_name'
         value={user.first_name}
@@ -69,8 +77,11 @@ const SignUpForm = () => {
         required
       />
 
-      <label className={labelClasses}>Last Name:</label>
+      <label htmlFor='last_name' className={labelClasses}>
+        Last Name:
+      </label>
       <input
+        id='last_name'
         type='text'
         name='last_name'
         value={user.last_name}
@@ -79,8 +90,11 @@ const SignUpForm = () => {
         required
       />
 
-      <label className={labelClasses}>Username:</label>
+      <label htmlFor='username' className={labelClasses}>
+        Username:
+      </label>
       <input
+        id='username'
         type='text'
         name='username'
         value={user.username}
@@ -89,8 +103,11 @@ const SignUpForm = () => {
         required
       />
 
-      <label className={labelClasses}>Email:</label>
+      <label htmlFor='email' className={labelClasses}>
+        Email:
+      </label>
       <input
+        id='email'
         type='email'
         name='email'
         value={user.email}
@@ -99,8 +116,11 @@ const SignUpForm = () => {
         required
       />
 
-      <label className={labelClasses}>Password:</label>
+      <label htmlFor='password' className={labelClasses}>
+        Password:
+      </label>
       <input
+        id='password'
         type='password'
         name='password'
         value={user.password}
