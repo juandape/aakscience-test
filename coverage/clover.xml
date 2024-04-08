@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1712620299149" clover="3.2.0">
+  <project timestamp="1712620299149" name="All files">
+    <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="17" coveredelements="17" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1"/>
+    <file name="SignUpForm.jsx" path="D:\projects\aakscience-test\src\components\SignUpForm.jsx">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="9" type="stmt"/>
+      <line num="19" count="9" type="stmt"/>
+      <line num="21" count="9" type="stmt"/>
+      <line num="22" count="6" type="stmt"/>
+      <line num="25" count="9" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="37" count="9" type="stmt"/>
+      <line num="38" count="9" type="stmt"/>
+      <line num="39" count="9" type="stmt"/>
+    </file>
+  </project>
+</coverage>
